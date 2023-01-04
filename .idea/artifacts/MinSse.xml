@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MinSse">
+    <output-path>$PROJECT_DIR$/out/artifacts/MinSse</output-path>
+    <root id="archive" name="MinSse.jar">
+      <element id="module-output" name="SESWP" />
+    </root>
+  </artifact>
+</component>

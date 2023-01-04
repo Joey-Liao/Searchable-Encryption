@@ -46,14 +46,24 @@ public class FileUtil {
         while (m.find())
             words.add(m.group());
         return words;
-    } 
+    }
+    public static List<String> getWordsBySpace(String essay) {
+        List<String> words = new ArrayList<>();
+        String[] wordStrs=essay.split(" ");
+        for(String str:wordStrs){
+            words.add(str);
+        }
+        return words;
+    }
+
     
     public static String[] getEncWords(String encEssay) {
-        int count = encEssay.length()/64;
+        //System.out.println(encEssay.length());//128
+        int count = encEssay.length()/(64*SearchableEncryption.TIMES);
         String[] encWords = new String[count];
         for(int i = 0; i < count; i++) {
             String temp = "";
-            for(int j = i*64; j < i*64+64; j++) {
+            for(int j = i*64*SearchableEncryption.TIMES; j < i*64*SearchableEncryption.TIMES+64*SearchableEncryption.TIMES; j++) {
                 temp += encEssay.charAt(j);
             }
             encWords[i] = temp; 
